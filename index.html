@@ -10,23 +10,19 @@
 
 <body>
 
-<?php if (isset($_POST['form_submitted'])): ?>  
 
 <h2>Thank You 
 
-<?php echo $_POST['firstname']; ?>
-
 </h2> 
 
-<p>You have been registered as <?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?> </p> 
+<p>You have been registered as  </p> 
 
 <p>Go <a href="index.html" >back</a> to the form</p> 
 
-<?php else: ?> 
 
 <h2>Registration Form</h2> 
 
-<form action="" method="GET"> 
+<form action="index.php" method="GET"> 
 
 First name: <input type="text" name="firstname"><br> 
 
@@ -38,7 +34,6 @@ Last name: <input type="text" name="lastname"> <br>
 
 </form> 
 
-<?php endif; ? > 
 
 </body> 
 
