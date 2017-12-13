@@ -1,0 +1,99 @@
+<!DOCTYPE html>    
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTML CODE</title>
+  <style>    
+  body {
+  }
+  #loader{
+    height: 1000px;
+    background: #333;
+  }
+  #load {
+    background:#333;
+
+    position:absolute;
+    width:600px;
+    height:36px;
+    left:50%;
+    top:40%;
+    font-size: 3em;
+    margin-left:-300px;
+    overflow:visible;
+    user-select:none;
+    cursor:default;
+  }
+
+  #load div {
+    position:absolute;
+    width:20px;
+    height:36px;
+    opacity:0;
+    font-family:Helvetica, Arial, sans-serif;
+    animation:move 2s linear infinite;
+    transform:rotate(180deg);
+    color:#fff;
+  }
+
+  #load div:nth-child(2) {
+    animation-delay:0.2s;
+  }
+  #load div:nth-child(3) {
+    animation-delay:0.4s;
+  }
+
+  @keyframes move {
+    0% {
+      left:0;
+      opacity:0;
+    }
+    35% {
+      left: 41%; 
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    65% {
+      left:59%; 
+      transform:rotate(0deg); 
+      opacity:1;
+    }
+    100% {
+      left:100%; 
+      transform:rotate(-180deg);
+      opacity:0;
+    }
+  }
+
+</style>
+<!--[if lt IE 9]><script src="/r10/html5shiv.js"></script><![endif]-->
+</head>  
+
+<body>    
+  <div id="loader">
+    <div id="load">
+      <div>E</div>
+      <div>A</div>
+      <div>S</div>
+    </div></div>
+
+    <script>
+  /*$(document).ready(function(){
+  var load = document.getElementById('load');
+ // window.addEventListener('load',function(){
+    $(load).css({'display':'none'});
+  //});
+});*/
+
+function myFunction() {
+  document.getElementById("load").innerHTML = "";
+}
+//window.addEventListener('load',function(){myFunction()});
+</script>
+
+
+</body>
+
+</html>
+
+
