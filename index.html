@@ -1,295 +1,50 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>firebase</title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/animate.css" type="text/css">
-  <style type="text/css">
-
-  .transparent{
-   background-color: rgba(255, 255, 255, 0.1);
-   transition: background-color 2000ms ease;
-
- }
- .item_onbar{
-  color: #d9d9d9;
-}
-.fixed{
- background-color: rgba(0, 102, 153, 0.9);
- transition: background-color 2000ms ease;
-}
-
-/* backgroun animative loop*/
-        
-body {
-  background: gray url("images/2017/brake/1.jpg") repeat 0 0;
-
-  width: 100%;
-  text-align: center;
-  
-  -webkit-animation: slidingLoop 20s linear infinite;
-}
-
-@-webkit-keyframes slidingLoop {
-    from { background-position: 0 0; }
-    to { background-position: 0 400px; }
-}
-/*loop ends*/
-</style>
 </head>
+<body>
+1:<input type="text" name="info1"><br>
+2:<input type="text" name="info2"><br>
+<button id="save_button">save</button>
+<button id="load_button">load</button>
+<button id="clear_button">clear</button>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB8bLjVf-WQuCn8WU66a8EoaAVWcJ9g0IY",
+    authDomain: "saenit-416f8.firebaseapp.com",
+    databaseURL: "https://saenit-416f8.firebaseio.com",
+    projectId: "saenit-416f8",
+    storageBucket: "saenit-416f8.appspot.com",
+    messagingSenderId: "53439641749"
+  };
+  firebase.initializeApp(config);
 
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="10">
-  <nav class="navbar navbar-inverted navbar-fixed-top transparent animated bounceInDown">
-    <div class="container-fluid ">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed item_onbar" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <i class="fa fa-bars fa-1x" aria-hidden="true"></i>
-        </button>
-        <a class="navbar-brand item_onbar animated pulse infinite" href="#">SAE</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li ><a href="#" class="item_onbar animated pulse infinite">Team Nitrox </a></li>
-          <li><a href="#" class="item_onbar animated pulse infinite">Team Acclerons</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle item_onbar animated pulse infinite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Year <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#" onclick="myfun(2017)">2017</a></li>
-              <li><a href="#" onclick="myfun(2017)">2016</a></li>
-              <li><a href="#" onclick="myfun(2017)">2015</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#" onclick="myfun(0000)">Previous</a></li>
-            </ul>
-          </li>
-      </ul><!--
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">
-            <i class="glyphicon glyphicon-search"></i></button>
-          </form>-->
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"  class="item_onbar animated pulse infinite">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle item_onbar animated pulse infinite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SAY HII!<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#"><i class="fa fa-facebook animated jello" aria-hidden="true"> - facebook</i></a></li>
-                <li><a href="#"><i class="fa fa-twitter animated jello" aria-hidden="true"> - twitter</i></a></li>
-                <li><a href="#"><i class="fa fa-whatsapp animated jello" aria-hidden="true"> - watsapp</i></a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <div class="slider_div slider_all">
-      <div id="myCarousel" class=" slider_all carousel slide" data-ride="carousel" >
-        <!-- Indicators -->
-        <ol class=" carousel-indicators animated fadeIn">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class=" slider_all carousel-inner responsive_space">
-
-          <div class=" slider_all item active responsive_space">
-            <div class="carousel-caption">
-              <h1  class="animated pulse infinite" >Los Angeles</h1>
-              <p>LA is always so much fun!</p>
-            </div>
-
-            <img src="images/2017/brake/1.jpg" alt="Los Angeles" style="width:100%;height: 100%;">
-          </div>
-
-          <div class=" slider_all item responsive_space">
-            <img src="images/2017/brake/1.jpg" alt="Chicago" style="width:100%;height: 100%;">
-            <div class="carousel-caption">
-
-              <h1  class="animated pulse infinite" >Los Angeles</h1>
-              <p>LA is always so much fun!</p>
-            </div>
-          </div>
-          
-          <div class=" slider_all item responsive_space">
-            <img src="images/2017/brake/1.jpg" alt="New York" style="width:100%;height: 100%;">
-            <div class="carousel-caption">
-
-              <h1  class="animated pulse infinite" >Los Angeles</h1>
-              <p>LA is always so much fun!</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Left and right controls -->
-        <a class=" slider_all left carousel-control" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left animated flash infinite" ></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class=" slider_all right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right animated flash infinite" ></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-    <br>
-    <div class="container">
-      <h1 style="text-align: center;"><b><u>Let's get socialize</u></b></h1>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-default divHiddenAnim">
-            <div class="panel-body divHiddenAnim"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fteamaccelerons%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="panel panel-default divHiddenAnim">
-            <div class="panel-body divHiddenAnim"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fteamnitrox&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-          </div>
-
-        </div>
-        <div class="col-sm-4">
-          <div class="panel panel-default  divHiddenAnim">
-            <div class="panel-body divHiddenAnim"><iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fautokriti&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12"><h1><b><u>Who we are?</u></b></h1> </div>
-  </div>
-</div>
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-body"><img src="images/2017/brake/1.jpg"/></div>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="panel panel-default">
-            <div class="panel-body">team NITROX</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="panel panel-default">
-            <div class="panel-body">team ACCELERONS</div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <h2>Basic Panel</h2>
-          <div class="panel panel-default">
-            <div class="panel-body"><img src="images/2017/brake/1.jpg"/></div>
-          </div>
-        </div>
-      </div><div class="row">
-        <div class="col-sm-4">
-          <h2>Basic Panel</h2>
-          <div class="panel panel-default">
-            <div class="panel-body">A Basic Panel</div>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <h2>Basic Panel</h2>
-          <div class="panel panel-default">
-            <div class="panel-body">A Basic Panel</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- foter-->
-    <div class="row" id="page_footer">
-      <div class="col-sm-4">
-        <div class="panel-body"> 
-          <h4>Company Info</h4>
-          <p>Web agency created in 2014</p>
-          <p>Specialized in theme design template</p>
-          <p>Contact us for custom project</p>
-          <p>Make your own template with us</p>
-        </div>
-      </div>
-      <div class="col-sm-8">
-        <div class="panel-body" style="background:transparent;margin:10px;">
-         <h4>Say Heloo!!</h4>
-         <form class="text-left" role="form">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="append-icon" style="opacity: 0.5">
-                <input type="email" class="form-control" placeholder="Your name...">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="append-icon" style="opacity: 0.5">
-                <input type="email" class="form-control" placeholder="Your email address...">
-              </div>
-            </div>
-          </div>
-          <div  class="row" style="opacity: 0.5">
-            <div class="col-md-12">
-              <textarea class="textarea-field form-control m-t-20" placeholder="message..."  rows="5"></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8"></div>
-            <div class="col-md-4">
-              <div class="append-icon" style="opacity: 1.5">
-                <input type="submit" class="form-control" placeholder="submit">
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- end footer-->
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    $(window).scroll(function() {
-      if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes non opaque*/ 
-      {
-        $('.navbar').addClass('fixed');
-        $('.navbar').removeClass('transparent');
-      } else {
-        $('.navbar').addClass('transparent');
-        $('.navbar').removeClass('fixed');
-      }
+  var tootref= firebase.database().ref().child('infos');
+  $('#save_button').click(function(){
+    rootRef.set({
+      info1:$('#info1').val(),
+      info2:$('info2').val()
     });
+  });
 
-    $(document).ready(function(){
-      $(".carousel-control").hover(function(){
-        $('.glyphicon-chevron-left').removeClass('flash');
-        $('.glyphicon-chevron-right').removeClass('flash');
-      }, function(){
-        $('.glyphicon-chevron-left').addClass('flash');
-        $('.glyphicon-chevron-right').addClass('flash');
-      });
-    });
+  $('#clear_button').click(function(){
+    $.('#info1').val('');$.('#info2').val('');
+  });
+  $('#load_button').click(function(){
+    rootref.on('value',function(snapshot){
+      $('#info1').val(snapshot.child('infos/info1').val());
+      $('#info1').val(snapshot.child('infos/info2').val());
+    })
+  })
 
-  </script>
 
-  <script type="text/javascript" src="js/main.js"></script>
+</script>
+
+
+
 </body>
 </html>
