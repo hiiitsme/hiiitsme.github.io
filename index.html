@@ -6,8 +6,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-1:<input type="text" name="info1"><br>
-2:<input type="text" name="info2"><br>
+1:<input type="text" id="info1"><br>
+2:<input type="text" id="info2"><br>
 <button id="save_button">save</button>
 <button id="load_button">load</button>
 <button id="clear_button">clear</button>
@@ -27,7 +27,7 @@
   $('#save_button').click(function(){
     rootRef.set({
       info1:$('#info1').val(),
-      info2:$('info2').val()
+      info2:$('#info2').val()
     });
   });
 
