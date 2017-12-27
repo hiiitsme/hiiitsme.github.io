@@ -12,7 +12,6 @@
 <button id="clear_button">clear</button>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script>
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB8bLjVf-WQuCn8WU66a8EoaAVWcJ9g0IY",
     authDomain: "saenit-416f8.firebaseapp.com",
@@ -32,7 +31,8 @@
   });
 
   $('#clear_button').click(function(){
-    $.('#info1').val('');$.('#info2').val('');
+    $('#info1').val('');
+    $('#info2').val('');
   });
   $('#load_button').click(function(){
     rootref.on('value',function(snapshot){
